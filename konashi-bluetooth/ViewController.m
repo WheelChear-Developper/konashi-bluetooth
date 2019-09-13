@@ -488,51 +488,62 @@ static NSString* api_key = @"33635744542f4f523372794372396551435373394c317737512
                 [self LabelTextSet:sw3_label_button labelText:[NSString stringWithFormat:@"%@\nOFF",[UdSetting getUserStringDefault:@"sw3_callFlaze"]]];
                 [self LabelTextSet:sw4_label_button labelText:[NSString stringWithFormat:@"%@\nOFF",[UdSetting getUserStringDefault:@"sw4_callFlaze"]]];
                 
-                NSArray* sw_paturn = [UdSetting getUserArrayDefault:@"sw_paturn"];
-                if([[sw_paturn objectAtIndex:0] boolValue] == true){
+                if([UdSetting getUserBoolDefault:@"autoSaveSwitch"] == true){
                     
-                    [self setSw1ON];
-                }else{
-                    
-                    [self setSw1OFF];
-                }
-                
-                if([[sw_paturn objectAtIndex:1] boolValue] == true){
-                    
-                    [self setSw2ON];
-                }else{
-                    
-                    [self setSw2OFF];
-                }
-                
-                if([[sw_paturn objectAtIndex:2] boolValue] == true){
-                    
-                    [self setSw3ON];
-                }else{
-                    
-                    [self setSw3OFF];
-                }
-                
-                if([[sw_paturn objectAtIndex:3] boolValue] == true){
-                    
-                    [self setSw4ON];
-                }else{
-                    
-                    [self setSw4OFF];
-                }
-                
-                if(bln_SpeachMode == false){
-                    if([[sw_paturn objectAtIndex:4] boolValue] == true){
+                    NSArray* sw_paturn = [UdSetting getUserArrayDefault:@"sw_paturn"];
+                    if([[sw_paturn objectAtIndex:0] boolValue] == true){
                         
-                        [self setSpeachON];
+                        [self setSw1ON];
                     }else{
                         
-                        [self setSpeachOFF];
+                        [self setSw1OFF];
+                    }
+                    
+                    if([[sw_paturn objectAtIndex:1] boolValue] == true){
+                        
+                        [self setSw2ON];
+                    }else{
+                        
+                        [self setSw2OFF];
+                    }
+                    
+                    if([[sw_paturn objectAtIndex:2] boolValue] == true){
+                        
+                        [self setSw3ON];
+                    }else{
+                        
+                        [self setSw3OFF];
+                    }
+                    
+                    if([[sw_paturn objectAtIndex:3] boolValue] == true){
+                        
+                        [self setSw4ON];
+                    }else{
+                        
+                        [self setSw4OFF];
+                    }
+                    
+                    if(bln_SpeachMode == false){
+                        if([[sw_paturn objectAtIndex:4] boolValue] == true){
+                            
+                            [self setSpeachON];
+                        }else{
+                            
+                            [self setSpeachOFF];
+                        }
+                    }else{
+                        
+                        [self setSpeachON];
                     }
                 }else{
                     
-                    [self setSpeachON];
+                    [self setSw1OFF];
+                    [self setSw2OFF];
+                    [self setSw3OFF];
+                    [self setSw4OFF];
+                    [self setSpeachOFF];
                 }
+                
                 sw_chenge_Flg = false;
                 blnFirstStart = false;
             }

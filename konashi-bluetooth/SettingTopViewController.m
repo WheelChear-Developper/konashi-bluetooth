@@ -13,6 +13,7 @@
     NSUserDefaults_Setting *UdSetting; // インスタンス化して初期化
     
     __weak IBOutlet UITextField *startFlazeText;
+    __weak IBOutlet UISwitch *autoSaveSwitch;
 }
 @end
 
@@ -36,6 +37,8 @@
     }else{
         startFlazeText.text = [UdSetting getUserStringDefault:@"startFlaze"];
     }
+    
+    autoSaveSwitch.on = [UdSetting getUserBoolDefault:@"autoSaveSwitch"];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -49,6 +52,8 @@
         
         [UdSetting setUserStringDefault:@"startFlaze" data:startFlazeText.text];
     }
+    
+    [UdSetting setUserBoolDefault:@"autoSaveSwitch" data:autoSaveSwitch.on];
 }
 
 - (IBAction)handlePan:(id)sender {
