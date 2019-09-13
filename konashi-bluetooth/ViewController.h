@@ -1,0 +1,58 @@
+//
+//  ViewController.h
+//  konashi-bluetooth
+//
+//  Created by mi.amatani on 2019/06/19.
+//  Copyright © 2019 mi.amatani. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import "SettingTopViewController.h"
+
+@interface ViewController : UIViewController
+{
+    bool sw_chenge_Flg;
+    int konashi_onLine_Count;
+    bool sw1_OnOff_Flg;
+    bool sw2_OnOff_Flg;
+    bool sw3_OnOff_Flg;
+    bool sw4_OnOff_Flg;
+}
+@property (weak, nonatomic) IBOutlet UIButton *buttonMic;
+@end
+
+typedef enum{
+    SPEECHREC_SETTING_TYPE_BOOL,
+    SPEECHREC_SETTING_TYPE_INTEGER,
+    SPEECHREC_SETTING_TYPE_REAL,
+    SPEECHREC_SETTING_TYPE_STRING
+}SPEECHREC_SETTING_TYPE;
+
+typedef enum{
+    SPEECHREC_BUTTON_MODE_NONE = -99,
+    SPEECHREC_BUTTON_MODE_READY = -1,
+    SPEECHREC_BUTTON_MODE_LEVEL_0,
+    SPEECHREC_BUTTON_MODE_LEVEL_1,
+    SPEECHREC_BUTTON_MODE_LEVEL_2,
+    SPEECHREC_BUTTON_MODE_LEVEL_3,
+    SPEECHREC_BUTTON_MODE_LEVEL_4,
+    SPEECHREC_BUTTON_MODE_LEVEL_5,
+    SPEECHREC_BUTTON_MODE_LEVEL_6,
+    SPEECHREC_BUTTON_MODE_LEVEL_7,
+    SPEECHREC_BUTTON_MODE_LEVEL_8,
+    SPEECHREC_BUTTON_MODE_LEVEL_9,
+    SPEECHREC_BUTTON_MODE_LEVEL_10,
+    SPEECHREC_BUTTON_MODE_LEVEL_11,
+    SPEECHREC_BUTTON_MODE_LEVEL_12,
+    SPEECHREC_BUTTON_MODE_LEVEL_13,
+    SPEECHREC_BUTTON_MODE_LEVEL_14,
+    SPEECHREC_BUTTON_MODE_LEVEL_15,
+    SPEECHREC_BUTTON_MODE_RECOGNIZE
+}SPEECHREC_BUTTON_MODE;
+
+typedef enum{
+    SPEECHREC_RECOG_MODE_NONE,
+    SPEECHREC_RECOG_MODE_PUSH,
+    SPEECHREC_RECOG_MODE_RECOG
+}SPEECHREC_RECOG_MODE;

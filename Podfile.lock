@@ -1,0 +1,20 @@
+PODS:
+  - konashi-ios-sdk (5.0.1)
+  - XMLReader (0.0.2)
+
+DEPENDENCIES:
+  - konashi-ios-sdk
+  - XMLReader
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - konashi-ios-sdk
+    - XMLReader
+
+SPEC CHECKSUMS:
+  konashi-ios-sdk: 959ad0dd7f481b19bebbf996c5afe8ad52c3c3c4
+  XMLReader: c7e54b707c368e2fa545d8313276b4de13a36ff5
+
+PODFILE CHECKSUM: 32ccb4ff0ffa479ca497b8086ac9033a6af379e7
+
+COCOAPODS: 1.7.2
