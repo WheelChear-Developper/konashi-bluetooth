@@ -54,6 +54,9 @@ static NSString* api_key = @"33635744542f4f523372794372396551435373394c317737512
     double dbl_gpsHani;
     BOOL gpsChenge_Flg;
     
+    //外部入力
+    long lng_AnalogIn0;
+    
     __weak IBOutlet UILabel *sw_label_speachMode;
     __weak IBOutlet UILabel *sw1_label_button;
     __weak IBOutlet UILabel *sw2_label_button;
@@ -311,7 +314,7 @@ static NSString* api_key = @"33635744542f4f523372794372396551435373394c317737512
         }
         
         //Bluetoothチェック
-        bluetooth_connection_timer = [NSTimer scheduledTimerWithTimeInterval:0.5
+        bluetooth_connection_timer = [NSTimer scheduledTimerWithTimeInterval:0.3
                                                                       target:self
                                                                     selector:@selector(active_action)
                                                                     userInfo:nil
@@ -320,7 +323,7 @@ static NSString* api_key = @"33635744542f4f523372794372396551435373394c317737512
     }else{
   
         //Bluetoothチェック
-        bluetooth_connection_timer = [NSTimer scheduledTimerWithTimeInterval:0.5
+        bluetooth_connection_timer = [NSTimer scheduledTimerWithTimeInterval:0.3
                                                                       target:self
                                                                     selector:@selector(active_action)
                                                                     userInfo:nil
@@ -347,6 +350,23 @@ static NSString* api_key = @"33635744542f4f523372794372396551435373394c317737512
     
 //    NSLog(@"findWithName[0:接続成功 -1:接続失敗] _ %d", [Konashi findWithName:total_serial_key]);
 //    NSLog(@"isConnected[YES:接続中 NO:未接続] _ %@", ([Konashi isConnected] ? @"YES":@"NO"));
+    
+    [Konashi analogReadRequest:KonashiAnalogIO1];
+    lng_AnalogIn0 = [Konashi analogRead:KonashiAnalogIO1];
+    NSLog(@"Analog0 input = %ld", lng_AnalogIn0);
+    
+    //アナログにイン250以上があれば、スイッチ１、２を解除する（）
+    NSArray* sw_paturn = [UdSetting getUserArrayDefault:@"sw_paturn"];
+    if(lng_AnalogIn0 > 250){
+        if([[sw_paturn objectAtIndex:0] boolValue] == true){
+            
+            [self setSw1OFF];
+        }
+        if([[sw_paturn objectAtIndex:1] boolValue] == true){
+            
+            [self setSw2OFF];
+        }
+    }
     
     //バッテリーの残量表示更新
     UIDeviceBatteryState batteryState = [UIDevice currentDevice].batteryState;
