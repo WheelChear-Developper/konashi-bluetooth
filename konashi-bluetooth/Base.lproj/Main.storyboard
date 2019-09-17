@@ -949,7 +949,7 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="autoSaveSwitch" destination="haN-zi-6gg" id="4uk-EE-Rp4"/>
+                        <outlet property="autoSaveSwitch" destination="haN-zi-6gg" id="Y2q-ys-gpy"/>
                         <outlet property="startFlazeText" destination="igu-hu-6MG" id="OCR-sM-ow8"/>
                     </connections>
                 </viewController>
