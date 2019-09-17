@@ -314,7 +314,7 @@ static NSString* api_key = @"33635744542f4f523372794372396551435373394c317737512
         }
         
         //Bluetoothチェック
-        bluetooth_connection_timer = [NSTimer scheduledTimerWithTimeInterval:0.3
+        bluetooth_connection_timer = [NSTimer scheduledTimerWithTimeInterval:0.1
                                                                       target:self
                                                                     selector:@selector(active_action)
                                                                     userInfo:nil
@@ -323,7 +323,7 @@ static NSString* api_key = @"33635744542f4f523372794372396551435373394c317737512
     }else{
   
         //Bluetoothチェック
-        bluetooth_connection_timer = [NSTimer scheduledTimerWithTimeInterval:0.3
+        bluetooth_connection_timer = [NSTimer scheduledTimerWithTimeInterval:0.1
                                                                       target:self
                                                                     selector:@selector(active_action)
                                                                     userInfo:nil
