@@ -93,7 +93,6 @@
 		3AE001A922EC96C300EDA5AD /* BatteryInput@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AE001A322EC96C200EDA5AD /* BatteryInput@3x.png */; };
 		3AE001AA22EC96C300EDA5AD /* Battery20@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AE001A422EC96C200EDA5AD /* Battery20@3x.png */; };
 		3AE001AC22ED2FAD00EDA5AD /* board.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3AE001AB22ED2FAD00EDA5AD /* board.jpg */; };
-		3AE1278D2330881A0014E18F /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE1278C2330881A0014E18F /* Main_iPad.storyboard */; };
 		4C61F876B94455255688DC7B /* Pods_konashi_bluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4FB8210FD3405203EAF2CF /* Pods_konashi_bluetooth.framework */; };
 /* End PBXBuildFile section */
 
@@ -194,7 +193,6 @@
 		3AE001A322EC96C200EDA5AD /* BatteryInput@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BatteryInput@3x.png"; sourceTree = "<group>"; };
 		3AE001A422EC96C200EDA5AD /* Battery20@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Battery20@3x.png"; sourceTree = "<group>"; };
 		3AE001AB22ED2FAD00EDA5AD /* board.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = board.jpg; sourceTree = "<group>"; };
-		3AE1278C2330881A0014E18F /* Main_iPad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		6C90BF116D31E017BAC597AA /* Pods-konashi-bluetooth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-konashi-bluetooth.debug.xcconfig"; path = "Target Support Files/Pods-konashi-bluetooth/Pods-konashi-bluetooth.debug.xcconfig"; sourceTree = "<group>"; };
 		8F4FB8210FD3405203EAF2CF /* Pods_konashi_bluetooth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_konashi_bluetooth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A331142F1B7A26AA13051D16 /* Pods-konashi-bluetooth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-konashi-bluetooth.release.xcconfig"; path = "Target Support Files/Pods-konashi-bluetooth/Pods-konashi-bluetooth.release.xcconfig"; sourceTree = "<group>"; };
@@ -261,7 +259,6 @@
 			children = (
 				3A38B86022BA5CF30097EA8C /* LaunchScreen.storyboard */,
 				3A38B85B22BA5CF30097EA8C /* Main.storyboard */,
-				3AE1278C2330881A0014E18F /* Main_iPad.storyboard */,
 				3A38B85522BA5CF30097EA8C /* AppDelegate.h */,
 				3A38B85622BA5CF30097EA8C /* AppDelegate.m */,
 				3A38B85822BA5CF30097EA8C /* ViewController.h */,
@@ -457,7 +454,6 @@
 				3A549DED22EC1CD50042D82F /* speaking.png in Resources */,
 				3AD05DCD22C24EB300343BD7 /* speak_now_0.png in Resources */,
 				3AD05DD022C24EB300343BD7 /* speak_now_2.png in Resources */,
-				3AE1278D2330881A0014E18F /* Main_iPad.storyboard in Resources */,
 				3A32C43B22EBDD0C002817C3 /* MenuIcon.png in Resources */,
 				3AD05DA422C20D8300343BD7 /* vad_model_20140319 in Resources */,
 				3AE0018E22EC969D00EDA5AD /* Battery80.png in Resources */,

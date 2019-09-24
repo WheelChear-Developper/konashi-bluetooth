@@ -26,7 +26,7 @@
 
 - (NSString *)sw1_callFlaze
 {
-    return @"アカ";
+    return @"イチ";
 }
 - (BOOL)sw1_callFlazeOnOff
 {
@@ -36,11 +36,14 @@
 {
     return false;
 }
-
+- (BOOL)sw1_inputResetOnOff
+{
+    return false;
+}
 
 - (NSString *)sw2_callFlaze
 {
-    return @"アオ";
+    return @"ニ";
 }
 - (BOOL)sw2_callFlazeOnOff
 {
@@ -50,10 +53,14 @@
 {
     return false;
 }
+- (BOOL)sw2_inputResetOnOff
+{
+    return false;
+}
 
 - (NSString *)sw3_callFlaze
 {
-    return @"キイロ";
+    return @"サン";
 }
 - (BOOL)sw3_callFlazeOnOff
 {
@@ -63,10 +70,14 @@
 {
     return false;
 }
+- (BOOL)sw3_inputResetOnOff
+{
+    return false;
+}
 
 - (NSString *)sw4_callFlaze
 {
-    return @"ミドリ";
+    return @"ヨン";
 }
 - (BOOL)sw4_callFlazeOnOff
 {
@@ -76,6 +87,11 @@
 {
     return false;
 }
+- (BOOL)sw4_inputResetOnOff
+{
+    return false;
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.

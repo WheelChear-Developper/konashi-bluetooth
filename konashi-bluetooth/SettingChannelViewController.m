@@ -16,6 +16,7 @@
     __weak IBOutlet UITextField *callFlaze;
     __weak IBOutlet UISwitch *callFlazeOnOff;
     __weak IBOutlet UISwitch *callFlazeOnOffTurn;
+    __weak IBOutlet UISwitch *inputResetOnOff;
 }
 @end
 
@@ -34,21 +35,25 @@
             callFlaze.placeholder = [APP_DELEGATE sw1_callFlaze];
             callFlazeOnOff.on = [APP_DELEGATE sw1_callFlazeOnOff];
             callFlazeOnOffTurn.on = [APP_DELEGATE sw1_callFlazeOnOffTurn];
+            inputResetOnOff.on = [APP_DELEGATE sw1_inputResetOnOff];
             break;
         case 2:
             callFlaze.placeholder = [APP_DELEGATE sw2_callFlaze];
             callFlazeOnOff.on = [APP_DELEGATE sw2_callFlazeOnOff];
             callFlazeOnOffTurn.on = [APP_DELEGATE sw2_callFlazeOnOffTurn];
+            inputResetOnOff.on = [APP_DELEGATE sw2_inputResetOnOff];
             break;
         case 3:
             callFlaze.placeholder = [APP_DELEGATE sw3_callFlaze];
             callFlazeOnOff.on = [APP_DELEGATE sw3_callFlazeOnOff];
             callFlazeOnOffTurn.on = [APP_DELEGATE sw3_callFlazeOnOffTurn];
+            inputResetOnOff.on = [APP_DELEGATE sw3_inputResetOnOff];
             break;
         case 4:
             callFlaze.placeholder = [APP_DELEGATE sw4_callFlaze];
             callFlazeOnOff.on = [APP_DELEGATE sw4_callFlazeOnOff];
             callFlazeOnOffTurn.on = [APP_DELEGATE sw4_callFlazeOnOffTurn];
+            inputResetOnOff.on = [APP_DELEGATE sw4_inputResetOnOff];
             break;
             
         default:
@@ -71,6 +76,7 @@
             }
             callFlazeOnOff.on = [UdSetting getUserBoolDefault:@"sw1_callFlazeOnOff"];
             callFlazeOnOffTurn.on = [UdSetting getUserBoolDefault:@"sw1_callFlazeOnOffTurn"];
+            inputResetOnOff.on = [UdSetting getUserBoolDefault:@"sw1_inputResetOnOff"];
             break;
         case 2:
             
@@ -81,7 +87,7 @@
             }
             callFlazeOnOff.on = [UdSetting getUserBoolDefault:@"sw2_callFlazeOnOff"];
             callFlazeOnOffTurn.on = [UdSetting getUserBoolDefault:@"sw2_callFlazeOnOffTurn"];
-            
+            inputResetOnOff.on = [UdSetting getUserBoolDefault:@"sw2_inputResetOnOff"];
             break;
         case 3:
             
@@ -92,7 +98,7 @@
             }
             callFlazeOnOff.on = [UdSetting getUserBoolDefault:@"sw3_callFlazeOnOff"];
             callFlazeOnOffTurn.on = [UdSetting getUserBoolDefault:@"sw3_callFlazeOnOffTurn"];
-            
+            inputResetOnOff.on = [UdSetting getUserBoolDefault:@"sw3_inputResetOnOff"];
             break;
         case 4:
             
@@ -103,7 +109,7 @@
             }
             callFlazeOnOff.on = [UdSetting getUserBoolDefault:@"sw4_callFlazeOnOff"];
             callFlazeOnOffTurn.on = [UdSetting getUserBoolDefault:@"sw4_callFlazeOnOffTurn"];
-            
+            inputResetOnOff.on = [UdSetting getUserBoolDefault:@"sw4_inputResetOnOff"];
             break;
             
         default:
@@ -131,6 +137,7 @@
                 [UdSetting setUserStringDefault:@"sw1_callFlaze" data:[APP_DELEGATE sw1_callFlaze]];
                 [UdSetting setUserBoolDefault:@"sw1_callFlazeOnOff" data:callFlazeOnOff.on];
                 [UdSetting setUserBoolDefault:@"sw1_callFlazeOnOffTurn" data:callFlazeOnOffTurn.on];
+                [UdSetting setUserBoolDefault:@"sw1_inputResetOnOff" data:inputResetOnOff.on];
             }else{
                 BOOL bln_jyufukuSet = false;
                 if([callFlaze.text isEqualToString: [UdSetting getUserStringDefault:@"startFlaze"]]){
@@ -150,6 +157,7 @@
                     [UdSetting setUserStringDefault:@"sw1_callFlaze" data:callFlaze.text];
                     [UdSetting setUserBoolDefault:@"sw1_callFlazeOnOff" data:callFlazeOnOff.on];
                     [UdSetting setUserBoolDefault:@"sw1_callFlazeOnOffTurn" data:callFlazeOnOffTurn.on];
+                    [UdSetting setUserBoolDefault:@"sw1_inputResetOnOff" data:inputResetOnOff.on];
                 }else{
                     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"エラー" message:@"他のフレーズと重複している為、登録はされません。" preferredStyle:UIAlertControllerStyleAlert];
                     [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
@@ -164,6 +172,7 @@
                 [UdSetting setUserStringDefault:@"sw2_callFlaze" data:[APP_DELEGATE sw2_callFlaze]];
                 [UdSetting setUserBoolDefault:@"sw2_callFlazeOnOff" data:callFlazeOnOff.on];
                 [UdSetting setUserBoolDefault:@"sw2_callFlazeOnOffTurn" data:callFlazeOnOffTurn.on];
+                [UdSetting setUserBoolDefault:@"sw2_inputResetOnOff" data:inputResetOnOff.on];
             }else{
                 BOOL bln_jyufukuSet = false;
                 if([callFlaze.text isEqualToString: [UdSetting getUserStringDefault:@"startFlaze"]]){
@@ -183,6 +192,7 @@
                     [UdSetting setUserStringDefault:@"sw2_callFlaze" data:callFlaze.text];
                     [UdSetting setUserBoolDefault:@"sw2_callFlazeOnOff" data:callFlazeOnOff.on];
                     [UdSetting setUserBoolDefault:@"sw2_callFlazeOnOffTurn" data:callFlazeOnOffTurn.on];
+                    [UdSetting setUserBoolDefault:@"sw2_inputResetOnOff" data:inputResetOnOff.on];
                 }else{
                     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"エラー" message:@"他のフレーズと重複している為、登録はされません。" preferredStyle:UIAlertControllerStyleAlert];
                     [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
@@ -197,6 +207,7 @@
                 [UdSetting setUserStringDefault:@"sw3_callFlaze" data:[APP_DELEGATE sw3_callFlaze]];
                 [UdSetting setUserBoolDefault:@"sw3_callFlazeOnOff" data:callFlazeOnOff.on];
                 [UdSetting setUserBoolDefault:@"sw3_callFlazeOnOffTurn" data:callFlazeOnOffTurn.on];
+                [UdSetting setUserBoolDefault:@"sw3_inputResetOnOff" data:inputResetOnOff.on];
             }else{
                 BOOL bln_jyufukuSet = false;
                 if([callFlaze.text isEqualToString: [UdSetting getUserStringDefault:@"startFlaze"]]){
@@ -216,6 +227,7 @@
                     [UdSetting setUserStringDefault:@"sw3_callFlaze" data:callFlaze.text];
                     [UdSetting setUserBoolDefault:@"sw3_callFlazeOnOff" data:callFlazeOnOff.on];
                     [UdSetting setUserBoolDefault:@"sw3_callFlazeOnOffTurn" data:callFlazeOnOffTurn.on];
+                    [UdSetting setUserBoolDefault:@"sw3_inputResetOnOff" data:inputResetOnOff.on];
                 }else{
                     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"エラー" message:@"他のフレーズと重複している為、登録はされません。" preferredStyle:UIAlertControllerStyleAlert];
                     [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
@@ -230,6 +242,7 @@
                 [UdSetting setUserStringDefault:@"sw4_callFlaze" data:[APP_DELEGATE sw4_callFlaze]];
                 [UdSetting setUserBoolDefault:@"sw4_callFlazeOnOff" data:callFlazeOnOff.on];
                 [UdSetting setUserBoolDefault:@"sw4_callFlazeOnOffTurn" data:callFlazeOnOffTurn.on];
+                [UdSetting setUserBoolDefault:@"sw4_inputResetOnOff" data:inputResetOnOff.on];
             }else{
                 BOOL bln_jyufukuSet = false;
                 if([callFlaze.text isEqualToString: [UdSetting getUserStringDefault:@"startFlaze"]]){
@@ -249,6 +262,7 @@
                     [UdSetting setUserStringDefault:@"sw4_callFlaze" data:callFlaze.text];
                     [UdSetting setUserBoolDefault:@"sw4_callFlazeOnOff" data:callFlazeOnOff.on];
                     [UdSetting setUserBoolDefault:@"sw4_callFlazeOnOffTurn" data:callFlazeOnOffTurn.on];
+                    [UdSetting setUserBoolDefault:@"sw4_inputResetOnOff" data:inputResetOnOff.on];
                 }else{
                     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"エラー" message:@"他のフレーズと重複している為、登録はされません。" preferredStyle:UIAlertControllerStyleAlert];
                     [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {

@@ -359,12 +359,24 @@ static NSString* api_key = @"33635744542f4f523372794372396551435373394c317737512
     NSArray* sw_paturn = [UdSetting getUserArrayDefault:@"sw_paturn"];
     if(lng_AnalogIn0 > 250){
         if([[sw_paturn objectAtIndex:0] boolValue] == true){
-            
-            [self setSw1OFF];
+            if([UdSetting getUserBoolDefault:@"sw1_inputResetOnOff"]){
+                [self setSw1OFF];
+            }
         }
         if([[sw_paturn objectAtIndex:1] boolValue] == true){
-            
-            [self setSw2OFF];
+            if([UdSetting getUserBoolDefault:@"sw2_inputResetOnOff"]){
+                [self setSw2OFF];
+            }
+        }
+        if([[sw_paturn objectAtIndex:2] boolValue] == true){
+            if([UdSetting getUserBoolDefault:@"sw3_inputResetOnOff"]){
+                [self setSw3OFF];
+            }
+        }
+        if([[sw_paturn objectAtIndex:3] boolValue] == true){
+            if([UdSetting getUserBoolDefault:@"sw4_inputResetOnOff"]){
+                [self setSw4OFF];
+            }
         }
     }
     

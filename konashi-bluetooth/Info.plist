@@ -58,5 +58,7 @@
 	<string>位置情報に常に使われます。</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>移動情報取得に使います。</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>IoT機器と通信に使います。</string>
 </dict>
 </plist>
